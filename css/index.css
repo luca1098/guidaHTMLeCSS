@@ -10,4 +10,17 @@ ul{
 }
 
 
-/******************/
+/*********header*********/
+.navigation{
+    min-height: 60px;
+    
+}
+.navigation nav li{
+    list-style: none;
+    margin: 0 .5rem;
+}
+
+/*********main*********/
+main{
+    min-height: 50vh;
+}
