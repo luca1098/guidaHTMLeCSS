@@ -5,56 +5,268 @@
     <meta name="description" content="Sito web statico realizzato con HTML, CSS e JAVASCRIPT">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home | Luca La Marca </title>
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <!--bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!--font awesome-->
+    <script src="https://kit.fontawesome.com/4ae7a2e2b9.js"></script>
+    <!--scroll effect-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!--mycss-->
+    <link rel="stylesheet" type="text/css" href="./css/background.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 <body>
+    <!--cursor-->
+    <div id="cursor"></div>
+    <!--header-->
+
     <header class="navigation d-flex align-items-center">
-        <nav class="container d-flex align-items-center justify-content-between">
+        <!--burger-->
+        <svg id="burger" class="hamburger" viewBox="0 0 100 100" width="80">
+            <path class="hamburger-line hamburger-top" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"></path>
+            <path class="hamburger-line hamburger-middle" d="m 30,50 h 40"></path>
+        </svg>
+        <!--burger.-->
+        <nav class="container">
             <a href="#">Logo</a>
-            <ul class="d-flex align-items-center">
-                <li>
-                    <a href="#">Su di me</a>
-                </li>
-                <li>
-                    <a href="#">progetti</a>
-                </li>
-                <li>
-                    <a href="#">skills</a>
-                </li>
+            <ul>
+                <a href="#about" class="nav-link">
+                    <li>Su di me</li>
+                </a>
+                <a href="#progetti" class="nav-link">
+                    <li>Progetti</li>
+                </a>
+                <a href="#skills" class="nav-link">
+                    <li>Skills</li>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <li class="cta">Conosciamoci</li>
+                </a>
             </ul>
         </nav>
     </header>
-    <!----------->
-    <main class="d-flex align-items-center justify-content-center">
+    <!--canva-->
+    
+    <!--main-->
+ 
+    <main class="main d-flex align-items-center justify-content-ceneter py-100">
+        <div class='stars'></div>
+        <div class='stars2'></div>
+        <div class='stars3'></div>
         <div class="container text-center">
-            <h1>Luca La Marca</h1>
-            <p>Front-end Developer | Cripto Entusiasta</p>
-            <a href="#">Conosciamoci</a>
+            <h1 class="name">Luca La Marca</h1>
+            <p class="subtitle">Front-end Developer | Cripto Entusiasta</p>
+            <a href="#contact" class="cta">Conosciamoci</a>
         </div>
+     
     </main>
+
     <!--section about-->
-    <section >
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <div class="flui text-center text-lg-right">
-                    <h2>Su di me.</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Ratione nemo vel perferendis repudiandae quos ut a. Unde 
-                        quaerat earum esse, neque deleniti, id ratione quos, 
-                        eligendi labore aperiam dignissimos suscipit!</p>
+    <section id="about" class="py-100" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6" data-aos="fade-up">
+                    <div class="flui text-center text-lg-right">
+                        <h2 class="title-2">Su di me</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Ratione nemo vel perferendis repudiandae quos ut a. Unde 
+                            quaerat earum esse, neque deleniti, id ratione quos, 
+                            eligendi labore aperiam dignissimos suscipit!</p>
+                        <div class="d-flex align-items-center justify-content-center justify-content-md-end mt-5">
+                            <a href="https://github.com/luca1098" target="_blank" class="mr-3">github <i class="fab fa-github"></i></i></a>
+                            <a href="./CV.pdf" target="_blank" class="cta">curriculum</a>
+                        </div>
+
+                    </div>
+                
                 </div>
-              
-            </div>
-            <div class="col-12 col-lg-6">
-                <img src="">
+                <div class="col-12 col-lg-6">
+                    <img src="./img/astro.png" class="w-50">
+                </div>
             </div>
         </div>
     </section>
+    <!--section progect-->
+    <section id="progetti" class="py-100">
+        <div class="container" data-aos="fade-up">
+            <h2 class="title-2">Progetti</h2>
+            <p>Ecco alcuni dei miei lavori</p>
+            <div class="swiper-container">
+              
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> 
+                        <div class="underline"></div>
+                        <img class="project-img" src="./img/fioridinoto">                       
+                        <h4>Fiori di Noto</h4>
+                       <a href="https://www.fioridinoto.com" target="_blank">Visita il sito <i class="fas fa-arrow-alt-circle-right"></i></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="underline"></div>
+                        <img class="project-img" src="./img/studiodentisticoarcara">                       
+                        <h4>Studio Arcara</h4>
+                       <a href="https://studioarcara.com" target="_blank">Visita il sito <i class="fas fa-arrow-alt-circle-right"></i></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="underline"></div>
+                        <img class="project-img" src="./img/l2mdesign">                       
+                        <h4>l2mdesign</h4>
+                       <a href="https://l2mdesign.com" target="_blank">Visita il sito <i class="fas fa-arrow-alt-circle-right"></i></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="underline"></div>
+                        <img class="project-img" src="./img/federica-tardo">                       
+                        <h4>Federica Tardp</h4>
+                       <a href="https://federicatardo.com" target="_blank">Visita il sito <i class="fas fa-arrow-alt-circle-right"></i></a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--section skills-->
+    <section id="skills" class="py-100">
+        <div class="container">
+            <h2 class="title-2">Skills</h2>
+            <div class="row">
+                <div class="col-12 col-lg-6" >
+                    <!------>
+                    <div class="progress-wrap w-100">
+                        <h4 class="progress-label">HTML</h4>
+                        <div class="progress-bar">
+                            <span class="html _95" data-aos="fade-right" data-aos-duration="500"></span>
+                        </div>
+                    </div> 
+                    <!------>
+                    <div class="progress-wrap w-100">
+                        <h4 class="progress-label">CSS</h4>
+                        <div class="progress-bar">
+                            <span class="css _95" data-aos="fade-right" data-aos-duration="800"></span>
+                        </div>
+                    </div>
+                    <!------>
+                    <div class="progress-wrap w-100">
+                        <h4 class="progress-label">JAVASCRIPT</h4>
+                        <div class="progress-bar">
+                            <span class="js _80" data-aos="fade-right" data-aos-duration="1100"></span>
+                        </div>
+                    </div>
+                    <!------>
+                    <div class="progress-wrap w-100">
+                        <h4 class="progress-label">REACT</h4>
+                        <div class="progress-bar">
+                            <span class="react _80" data-aos="fade-right" data-aos-duration="1400"></span>
+                        </div>
+                    </div>
+                    <!------>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="progress-wrap w-100">
+                        <h4 class="progress-label">blockchain</h4>
+                        <div class="progress-bar">
+                            <span class="blockchain _85" data-aos="fade-right" data-aos-duration="1700"></span>
+                        </div>
+                    </div> 
+                    <!------>
+                    <div class="progress-wrap w-100">
+                        <h4 class="progress-label">leadership</h4>
+                        <div class="progress-bar">
+                            <span class="leadership _95" data-aos="fade-right" data-aos-duration="2000"></span>
+                        </div>
+                    </div>
+                    <!------>
+                    <div class="progress-wrap w-100">
+                        <h4 class="progress-label">teamwork</h4>
+                        <div class="progress-bar">
+                            <span class="team _95" data-aos="fade-right" data-aos-duration="2300"></span>
+                        </div>
+                    </div>
+                    <!------>
+                    <div class="progress-wrap w-100">
+                        <h4 class="progress-label">proactivity</h4>
+                        <div class="progress-bar">
+                            <span class="proactivity" data-aos="fade-right" data-aos-duration="2600"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </section>    
+    <!--section contatti-->
+    <section id="contact" class="py-100">
+        <div class="container" data-aos="fade-up">
+            <h2 class="title-2" >Conosciamoci</h2>
+            <p>Ti va un caffè?👊🏻 Tranquillo.. offro io!</p>
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <form>
+                        <input class="input-form"type="text" name="nome" placeholder="Nome">
+                        <input class="input-form" type="email" name="email" placeholder="Email">
+                        <textarea class="input-form" rows="6"></textarea>
+                        <div class="d-flex align-items-center mb-3">
+                             <input type="checkbox" required>
+                             <p class="pl-3 m-0">Dichiaro di aver letto ed accettato la <a href="#" target="_blank">Privacy Policy</a></p>
+                        </div>
+                        <button type="submit" class="cta mb-5">invia</button>
+                    </form>
+                </div>
+                <div class="col-12 col-lg-6 d-flex flex-wrap justify-content-between">
+                    <a href="#" target="_blank" class="contact-box whatsapp">
+                        <div>
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="contact-box email">
+                            <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/luca-la-marca-a6998316b/" target="_blank" class="contact-box linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/lucalamarca10/" target="_blank" class="contact-box instagram">
+                            <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--footer-->
+    <footer class="py-100 pb-5 footer">
+        <div class='stars'></div>
+        <div class='stars2'></div>
+        <div class='stars3'></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4 d-flex flex-column">
+                    <h2 class="title-2 small">Luca La Marca</h2>
+                    <p>+39 388 1839774 </p>
+                    <p>CF.LMRLCU98L02F943F </p>
+                    <p>Viale dei Cadorna 73 <br> Firenze (FI) - 50129</p>
+                </div>
+                <div class="col-12 col-lg-4 d-flex flex-column">
+                    <h2 class="title-2 small">link utili</h2>
+                    <a href="https://l2mdesign.com/blog/" target="_blank">Blog</a>
+                    <a href="https://www.instagram.com/_iconomy/" target="_blank">Iconomy</a>
+                    <a href="https://github.com/luca1098" target="_blank">github</a>
+                </div>
+                <div class="col-12 col-lg-4 d-flex flex-column">
+                    <h2 class="title-2 small">Social</h2>
+                    <a href="https://www.instagram.com/lucalamarca10/" target="_blank">Instagram</a>
+                    <a href="https://www.reddit.com/user/Responsible-Corgi920?utm_source=share&utm_medium=ios_app&utm_name=iossmf" target="_blank">Reddit</a>
+                    <a href="https://www.linkedin.com/in/luca-la-marca-a6998316b/" target="_blank">Linkedin</a>
+                </div>
+                <div class="col-12 socket text-center">
+                    <p><small>&copy; Copiright 2021 - Luca La Marca</small></p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <!--javascript-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/slider-initialization.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/index.js"></script>
+
 </body>

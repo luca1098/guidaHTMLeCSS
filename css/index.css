@@ -1,4 +1,6 @@
 /******general*********/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
+
 *{
     box-sizing: border-box;
 }
@@ -7,20 +9,446 @@ body,
 ul{
     padding: 0;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+html{
+    background: #fff;
+}
+body{
+    overflow-x: hidden;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+}
+
+p,
+a,
+li{
+    font-size: 1.2rem;
+    color: rgb(103, 103, 103);
+}
+a{
+    color: #021d4b;
+}
+
+.py-100{
+    padding: 100px  0;
+}
+.bk-gray{
+    background: rgba(210,210,210,1)
+}
+.title-2{
+    font-size: 6rem;
+    background: linear-gradient(360deg, rgba(255,255,255,1) 10%, rgba(210,210,210,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.title-2.small{
+    font-size: 4rem;
+    background: linear-gradient(360deg, rgba(2,29,75,1) 0%,rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+#cursor{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translate(-50% -50%);
+    pointer-events: none;
+    transition:all .2s ease;
+    transition-property: background, width,height;
+    mix-blend-mode:difference;
+    z-index: 9999;
+    pointer-events: none;
+
+}
+#cursor.big{
+    width: 120px;
+    height: 120px;
+
+}
+#cursor.medium{
+    width:60px;
+    height:60px;
+
+}
+.cta{
+    background: #021d4b;;
+    transition: all .2s linear;
+    color: #fff !important;
+    font-weight: 700;
+    padding: .5rem 1rem;
+    border-radius: 7px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+    border: none;
+}
+.cta:hover{
+    border:0;
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 20px rgba(38,128,235, .5);
+    text-decoration: none;
+}
+.cta:active{
+    transform: scale(.95);
+}
 
 /*********header*********/
 .navigation{
+    position: fixed;
     min-height: 60px;
-    
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    padding-top: .7rem;
+    transition: all .3s ease;
+    -webkit-transition-property: background;
+    transition-property: background;
 }
-.navigation nav li{
-    list-style: none;
+.navigation.scrolled{
+    background:rgba(255,255,255, .9);
+    box-shadow: 1px 10px 12px rgba(165, 165, 165, 0.1);
+}
+.navigation nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navigation nav a{
     margin: 0 .5rem;
+    transition: all .2s linear;
+}
+.navigation nav a:hover{
+    text-decoration: none;
+}
+.navigation nav a:not(:last-child):hover{
+    border-bottom: 2px solid #021d4b;
+}
+.navigation nav ul{
+    display: flex;
+    align-items: center;
+}
+.navigation nav a li{
+    list-style: none;
+    font-family: 'Bebas Neue', cursive;
+    color: #fff;
+}
+.navigation.scrolled nav a li{
+    color: #000;   
+}
+.nav-link.current{
+    background:yellow;
+}
+/*burger*/
+
+.hamburger {
+    cursor: pointer;
+    -webkit-transition: -webkit-transform .4s;
+    transition: -webkit-transform .4s;
+    transition: transform .4s;
+    transition: transform .4s, -webkit-transform .4s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    right: 5%;
+    display: none;
+    z-index: 100;
+
 }
 
-/*********main*********/
+
+.hamburger.active {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.hamburger.active .hamburger-top {
+    stroke-dashoffset: -98px
+}
+
+.hamburger.active .hamburger-bottom {
+    stroke-dashoffset: -138px
+}
+.hamburger.active .hamburger-line,
+.navigation.scrolled .hamburger-line{
+    stroke: #000;
+}
+
+.hamburger-line {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 3;
+    -webkit-transition: stroke-dasharray .4s, stroke-dashoffset .4s;
+    transition: stroke-dasharray .4s, stroke-dashoffset .4s
+}
+
+.hamburger-top {
+    stroke-dasharray: 40 139
+}
+
+.hamburger-bottom {
+    stroke-dasharray: 40 180
+}
+/***************************/
 main{
-    min-height: 50vh;
+    min-height: 100vh;
+    background: url('../img/forma.png')bottom center no-repeat,  radial-gradient(ellipse at bottom, #021d4b 0%, #090a0f 100%);
+    overflow: hidden;
+}
+.name{
+    display: inline-block;
+    padding: 2rem 1rem 0;
+    font-size: 8rem;
+    background: linear-gradient(360deg, rgba(2,29,75,1) 0%,rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.subtitle{
+    font-size: 1.8rem;
+    color: rgb(222, 222, 222);
+}
+/*******progetto*******/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative;
+
+  }
+  .underline{
+      position: absolute;
+      height: 10px;
+      width: 120%;
+      top: 40%;
+      border-radius: 50px;
+      left: 0;
+      background:#021d4b;;
+  }
+
+
+    .project-img{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  /****skills*****/
+  .progress-wrap{
+      margin-bottom: 30px;
+  }
+ 
+  .progress-bar{
+    width: 100%;
+    height: 15px;
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: 0px 0px 20px  rgba(165, 165, 165, 0.4);
+    overflow: hidden;
+  }
+  .progress-label{
+      text-transform: uppercase;
+  }
+  .progress-bar > span {
+      height: 100%; 
+      border-radius: 50px;
+      opacity: .9;
+  } 
+  ._80{
+    width: 80%;
+    }
+   ._85{
+      width: 85%;
+  }
+    
+  ._95{
+    width: 95%;
+  }
+ 
+  .progress-bar .html{
+      background: #eb8006;
+      box-shadow:  10px 10px 40px #c86d05,
+             -10px -10px 40px #ff9307;
+  }
+  .progress-bar .css{
+    background: #1273f3;
+    box-shadow:  10px 10px 40px #0f62cf,
+             -10px -10px 40px #1584ff;
+}
+  .progress-bar .js{
+    background: #852001;
+    box-shadow:  10px 10px 40px #711b01,
+        -10px -10px 40px #992501;
+}
+.progress-bar .react{
+    background: #c83d13;
+    box-shadow:  10px 10px 64px #aa3410,
+        -10px -10px 40px #e64616;
+}
+.progress-bar .blockchain{
+    background: #060480;
+    box-shadow:  10px 10px 40px #05036d,
+             -10px -10px 40px #070593;
+}
+.progress-bar .team{
+  background: #eccb0d;
+  box-shadow:  10px 10px 40px #c9ad0b,
+    -10px -10px 40px #ffe90f;
+}
+.progress-bar .leadership{
+  background: #6b08db;
+  box-shadow:  10px 10px 40px #5b07ba,
+    -10px -10px 40px #7b09fc;
+}
+.progress-bar .proactivity{
+  background: #11bd0b;
+  box-shadow:  10px 10px 40px #0ea109,
+    -10px -10px 40px #14d90d; 
+}
+
+/********contatti***************/
+.input-form{
+    width: 100%;
+    padding: .5rem 1.2rem;
+    font-size: 1.3rem;
+    background: #ffffff;
+    box-shadow:  1px 10px 16px rgba(165, 165, 165, 0.1);
+    border-radius: 50px;
+    border: none;
+    margin: 0 0 20px;
+}
+.contact-box{
+    width: 48%;
+    min-height: 250px;
+    display: flex;
+    font-size: 3rem;
+    color: #021d4b;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-radius: 50px;
+    transition: all .3s ease;
+    box-shadow:  1px 10px 16px rgba(165, 165, 165, 0.1);
+
+}
+.contact-box:hover{
+    box-shadow:  1px 10px 16px rgba(165, 165, 165, 0.3);
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.whatsapp{
+    color: #25d366;
+}
+.whatsapp:hover{
+    background: #25d366;
+}
+
+.instagram{
+    color: #c13584;
+}
+.instagram:hover{
+    background: #c13584;
+}
+.email{
+    color: #1e88e5;
+}
+.email:hover{
+    background: #1e88e5;
+}
+.linkedin{
+    color: #0077b5;
+}
+.linkedin:hover{
+    background: #0077b5;
+}
+/*****footer*******/
+.footer{
+    background: url('../img/forma2')top center no-repeat,  radial-gradient(ellipse at bottom, #021d4b 0%, #090a0f 100%);
+    overflow: hidden;
+}
+.footer p,
+.footer a{
+    color: #fff;
+}
+/*********media queries********/
+/*ipad pro*/
+@media(max-width:1024px){
+    #cursor{
+        display: none;
+    }
+}
+/*tablet*/
+@media(max-width:768px){
+    .py-100{
+        padding: 50px 0;
+    }
+    /*menu*/
+    .hamburger{
+        display: block;
+    }
+
+    .navigation ul{
+        position: fixed;
+        width: 0;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        background: rgb(255, 255, 255);
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        transition:all .3s ease;
+    }
+    .navigation ul li{
+        margin: 2rem;
+        font-size: 2rem;
+        z-index: 99;
+    }
+    .navigation nav a li{
+        color: #000;
+    }
+    .navigation ul.active{
+        width: 100vw;
+    }
+    /*main*/
+    .name{
+        padding: 1rem 1rem 0;
+        font-size: 5rem;
+    }
+    .subtitle{
+        font-size: 1.3rem;
+    }
+}
+
+/*smartphone*/
+@media (max-width:425px){
+    .contact-box {
+        min-height: 150px;
+    }
 }
